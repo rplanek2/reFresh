@@ -1,1 +1,76 @@
 /* CSS declarations go here */
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: sans-serif;
+  background-color: #315481;
+  background-image: linear-gradient(to bottom, #315481, #918e82 100%);
+  background-attachment: fixed;
+  width:100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding: 0;
+  margin: 0;
+
+  font-size: 14px;
+}
+
+.button {
+  max-width: 100px;
+  max-height: 500px; 
+  margin: 0 auto;
+  overflow: hidden;
+  background: white;
+  text-align: center;
+  padding: 50px 30px 50px 30px;
+
+}
+.start{
+	
+	-moz-box-shadow:inset 0px -3px 7px 0px #29bbff;
+	-webkit-box-shadow:inset 0px -3px 7px 0px #29bbff;
+	box-shadow:inset 0px -3px 7px 0px #29bbff;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2dabf9), color-stop(1, #0688fa));
+	background:-moz-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+	background:-webkit-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+	background:-o-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+	background:-ms-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+	background:linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2dabf9', endColorstr='#0688fa',GradientType=0);
+	background-color:#2dabf9;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	border:1px solid #0b0e07;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+  padding:9px 23px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #263666;
+}
+.start:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0688fa), color-stop(1, #2dabf9));
+	background:-moz-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+	background:-webkit-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+	background:-o-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+	background:-ms-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+	background:linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0688fa', endColorstr='#2dabf9',GradientType=0);
+	background-color:#0688fa;
+}
+.start:active {
+	position:relative;
+	top:1px;
+}
+.searchbar {
+  display:none;
+}

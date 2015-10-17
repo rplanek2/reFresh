@@ -1,14 +1,46 @@
 <head>
-  <title>reFresh</title>
+  <title>Freshdom</title>
 </head>
-
+ 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
+  <div>  
+    <ul id="topics" style="list-style-type:none">
+      <li class="button"><button class="start" type="button" onClick="search('Computer Science')">Submit</button></li>
+      <li class="button"><button class="start" type="button" onClick="alert('Hello world!')">Submit</button></li>
+      <li class="button"><button class="start" type="button" onClick="alert('Hello world!')">Submit</button></li>
+      <li class="button"><button class="start" type="button" onClick="alert('Hello world!')">Submit</button></li>
+      <li class="button"><button class="start" type="button" onClick="alert('Hello world!')">Submit</button></li>
+    </ul>
+  </div>
+  <div class="searchbar">
+    <script>
+    (function() {
+      var cx = '002332637345399217234:pk5vtjaozee';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+          '//cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+  <gcse:search ></gcse:search>
+  </div>
 </body>
-
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+ 
+<template name="task">
+  <li>{{text}}</li>
+   <li class="{{#if checked}}checked{{/if}}">
+    <button class="delete">&times;</button>
+ 
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+ 
+    <span class="text">{{text}}</span>
+  </li>
 </template>
+
+
+
+ 
+   
