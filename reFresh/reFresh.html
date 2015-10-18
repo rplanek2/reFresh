@@ -1,14 +1,73 @@
-<head>
-  <title>reFresh</title>
-</head>
-
-<body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
-</body>
-
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<!--HOME TEMPLATE WHICH WILL HOST BUTTONS -->
+<template name="home">
+  <meta content='width=device-width, initial-scale=1' name='viewport'/>
+  <div>  
+    <div class="allButtons">
+      <ul id="myList">
+        {{#each buttons}}
+          <li>{{> button}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
 </template>
+
+
+<!--BUTTON TEMPLATE USED ON HOME SCREEN -->
+<template name="button">
+    <a href="http://www.benague.ca" class="link" target="_blank"></a>
+    <button class="start" name = {{title}} type="button">{{title}}</button>
+</template>
+
+<!--PAGE TEMPLATES WHICH WILL HOST ARTICLES -->
+<template name="ComputerScience">
+  <h2>ComputerScience</h2>
+  {{> search}}
+</template>
+
+<template name="Business">
+  <h2>Business</h2>
+  {{> search}}
+</template> 
+
+<template name="News">
+  <h2>News</h2>
+  {{> search}}
+</template> 
+
+<template name="Funny">
+  <h2>Funny</h2>
+  {{> search}}
+</template> 
+
+<template name="UrbanDictionary">
+  <h2>UrbanDictionary</h2>
+  {{> search}}
+</template>  
+
+<template name="search">
+  <div class="searchbar">
+    <script>
+      (function() {
+        var cx = '002332637345399217234:pk5vtjaozee';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+            '//cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+      })();
+    </script>
+    <gcse:search>teesting</gcse:search>
+  </div>
+</template>
+
+
+
+
+
+
+
+
+

@@ -1,23 +1,100 @@
+//ROUTER TO HOME TEMPLATE
+Router.route('/', function () {
+  this.render('Home');
+});
+
+//ROUTERS TO ARTICLE TEMPLATES
+Router.route('/ComputerScience');
+Router.route('/Business');
+Router.route('/News');
+Router.route('/Funny');
+Router.route('/UrbanDictionary');
+
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
 
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
+  //SETS TITLE OF BUTTONS
+  Template.home.helpers({
+    buttons: [
+      {title: "ComputerScience"},
+      {title: "Business"},
+      {title: "News"},
+      {title: "Funny"},
+      {title: "UrbanDictionary"}
+    ]
+  });
+
+  //ACTION LISTENER FOR BUTTONS
+  Template.button.events({
+    'click .start': function () {
+      Router.go('/' + this.title);
     }
   });
 
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
-    }
+  Template.ComputerScience.helpers({  
+    
   });
-}
+  Template.Business.helpers({
 
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
   });
+  Template.News.helpers({
+
+  });
+  Template.nrop.helpers({
+
+  });
+  Template.UrbanDictionary.helpers({
+
+  });
+
+
+
+
+
+
+
+
+
+
+};
+
+var Test = function() {
+  var unorderedList = document.getElementById('myList');
+  var listItems = unorderedList.getElementsByTagName('li');
+
+  for (var button, i = 0; i < listItems.length; i++){
+    console.log(button, i);
+  }
 }
+/*
+var ComputerScience[5];
+var Business[5];
+var News[5];
+var nrop[5];
+var UrbanDictionary = "http://www.urbandictionary.com/";
+*/
+//var dom = {ComputerScience, Business, News, nrop, UrbanDictionary};
+
+search = function(query){
+  var total = 0;
+  var artCount = 0;
+  var theQuery = dom[query];
+  for (var dom in theQuery ){
+    //dom = {}; //declare array for articles
+    while (artCount < 3){
+      var site = "site:" + dom;
+      var fdate = new Date().getFullYear();
+      var idate = fdate - 1;
+      var range = idate + ".." + fdate;
+      var fire = site + " " + query + " " + range;
+      console.log(fire);
+
+      //grab url of specific article
+
+      //dom.push(/*url);
+
+      artCount++;
+      total++;  
+    }
+    artCount = 0;
+  }
+};
