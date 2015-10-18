@@ -30,13 +30,7 @@ if (Meteor.isClient) {
     }
   });
 
-  Template.ComputerScience.onCreated(){  
-    //console.log(this);
-    var x = Template.instance();
-
-    console.log(x.name);
-
-    console.log(x.innerHTML);
+  Template.ComputerScience.helpers({  
     
   });
   Template.Business.helpers({
@@ -71,14 +65,14 @@ var Test = function() {
     console.log(button, i);
   }
 }
-
+/*
 var ComputerScience[5];
 var Business[5];
 var News[5];
 var nrop[5];
 var UrbanDictionary = "http://www.urbandictionary.com/";
-
-var dom = {ComputerScience, Business, News, nrop, UrbanDictionary};
+*/
+//var dom = {ComputerScience, Business, News, nrop, UrbanDictionary};
 
 search = function(query){
   var total = 0;
