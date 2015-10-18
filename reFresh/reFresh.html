@@ -1,4 +1,4 @@
-
+<!--HOME TEMPLATE WHICH WILL HOST BUTTONS -->
 <template name="home">
   <meta content='width=device-width, initial-scale=1' name='viewport'/>
   <div>  
@@ -12,33 +12,53 @@
   </div>
 </template>
 
-<template name="register">
-  <h2>Register</h2>
+
+<!--BUTTON TEMPLATE USED ON HOME SCREEN -->
+<template name="button">
+    <button class="start" name = {{title}} type="button">{{title}}</button>
+</template>
+
+<!--PAGE TEMPLATES WHICH WILL HOST ARTICLES -->
+<template name="ComputerScience">
+  <h2 id = "cs">ComputerScience</h2>
+  {{> search}}
+</template>
+
+<template name="Business">
+  <h2>Business</h2>
+  {{> search}}
 </template> 
 
-<template name="button">
-    <button class="start" type="button">{{title}}</button>
-</template>
-  
+<template name="News">
+  <h2>News</h2>
+  {{> search}}
+</template> 
+
+<template name="nrop">
+  <h2>nrop</h2>
+  {{> search}}
+</template> 
+
+<template name="UrbanDictionary">
+  <h2>UrbanDictionary</h2>
+  {{> search}}
+</template>  
 
 
-  <!--
+<template name="search">
   <div class="searchbar">
-    <script>
-    (function() {
-      var cx = '002332637345399217234:pk5vtjaozee';
-      var gcse = document.createElement('script');
-      gcse.type = 'text/javascript';
-      gcse.async = true;
-      gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-          '//cse.google.com/cse.js?cx=' + cx;
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(gcse, s);
-    })();
-  </script>
-  <gcse:search ></gcse:search>
+    <script type="text/javascript">
+      (function() {
+        var cx = '002332637345399217234:pk5vtjaozee';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+            '//cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+      })();
+    </script>
+    <gcse:searchbox-only queryParameterName='q'></gcse:searchbox-only>
   </div>
-  {{show}}
-</body>
- 
--->
+</template>
