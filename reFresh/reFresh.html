@@ -1,17 +1,28 @@
-<head>
-  <title>Freshdom</title>
-</head>
- 
-<body>
+
+<template name="home">
+  <meta content='width=device-width, initial-scale=1' name='viewport'/>
   <div>  
-    <ul id="topics" style="list-style-type:none">
-      <li class="button"><button class="start" type="button" onClick="search('Computer Science')">Submit</button></li>
-      <li class="button"><button class="start" type="button" onClick="alert('Hello world!')">Submit</button></li>
-      <li class="button"><button class="start" type="button" onClick="alert('Hello world!')">Submit</button></li>
-      <li class="button"><button class="start" type="button" onClick="alert('Hello world!')">Submit</button></li>
-      <li class="button"><button class="start" type="button" onClick="alert('Hello world!')">Submit</button></li>
-    </ul>
+    <div class="allButtons">
+      <ul id="myList">
+        {{#each buttons}}
+          <li>{{> button}}</li>
+        {{/each}}
+      </ul>
+    </div>
   </div>
+</template>
+
+<template name="register">
+  <h2>Register</h2>
+</template> 
+
+<template name="button">
+    <button class="start" type="button">{{title}}</button>
+</template>
+  
+
+
+  <!--
   <div class="searchbar">
     <script>
     (function() {
@@ -27,20 +38,7 @@
   </script>
   <gcse:search ></gcse:search>
   </div>
+  {{show}}
 </body>
  
-<template name="task">
-  <li>{{text}}</li>
-   <li class="{{#if checked}}checked{{/if}}">
-    <button class="delete">&times;</button>
- 
-    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
- 
-    <span class="text">{{text}}</span>
-  </li>
-</template>
-
-
-
- 
-   
+-->

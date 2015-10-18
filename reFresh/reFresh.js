@@ -1,4 +1,9 @@
+
+
+
+
 //var namespace = {'Computer Science', 'News', 'Business', 'UrbanDictionary'};
+/*
 var namespace = {};
 namespace['Computer Science'] = {};
 namespace['Computer Science']['techcrunch.com'] = "";
@@ -20,43 +25,52 @@ search = function(query){
 
       //grab url of specific article
 
-      //dom.push(/*url*/);
+      //dom.push(/*url);
 
       artCount++;
       total++;  
     }
-    artCount = 0; /*reset */
+    artCount = 0; /*reset 
   }
 };
 
-
+*/
 Tasks = new Mongo.Collection("tasks");
 
+Router.route('/register');
+
+Router.route('/', function () {
+  this.render('Home');
+});
 if (Meteor.isClient) {
-  // This code only runs on the client
-  Template.body.helpers({
-    tasks: function () {
-      // Show newest tasks at the top
-      return Tasks.find({}, {sort: {createdAt: -1}});
-    }
+
+  Template.home.helpers({
+    buttons: [
+      {title: "Computer Science"},
+      {title: "Business"},
+      {title: "News"},
+      {title: "nrop"},
+      {title: "YouTube"}
+    ]
   });
 
-  Template.body.events({
-    "submit .new-task": function (event) {
-      // Prevent default browser form submit
-      event.preventDefault();
-
-      // Get value from form element
-      var text = event.target.text.value;
-
-      // Insert a task into the collection
-      Tasks.insert({
-        text: text,
-        createdAt: new Date() // current time
-      });
-
-      // Clear form
-      event.target.text.value = "";
+  Template.button.events({
+    'click .start': function () {
+      Test();
+      //Router.go('/register');
     }
   });
+};
+
+var Test = function() {
+  var unorderedList = document.getElementById('myList');
+  var listItems = unorderedList.getElementsByTagName('li');
+
+  for (var button, i = 0; i < listItems.length; i++){
+    console.log(button, i);
+  }
 }
+
+
+
+
