@@ -7,7 +7,7 @@ Router.route('/', function () {
 Router.route('/ComputerScience');
 Router.route('/Business');
 Router.route('/News');
-Router.route('/nrop');
+Router.route('/Funny');
 Router.route('/UrbanDictionary');
 
 if (Meteor.isClient) {
@@ -18,7 +18,7 @@ if (Meteor.isClient) {
       {title: "ComputerScience"},
       {title: "Business"},
       {title: "News"},
-      {title: "nrop"},
+      {title: "Funny"},
       {title: "UrbanDictionary"}
     ]
   });
